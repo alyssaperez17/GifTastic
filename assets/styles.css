@@ -1,0 +1,20 @@
+body{
+    background-image: url(https://s24193.pcdn.co/wp-content/uploads/2017/06/female-superheroes-entity-yaboykeiji-1-1082x720.png);
+    color: white;
+    font-size: 20px;
+    padding: 40px;  
+    
+
+}
+
+.container{
+    position: relative;
+  
+}
+
+#hero-buttons{
+    text-align: left;
+    
+    
+}
+
