@@ -15,7 +15,7 @@ renderButtons();
 
 // supposed to show gifs, can't figure this one out
 
-$(document).on("click", "superheroes", function(){
+$(document).on("click", "data-name", function(){
 
 
 var superPower = $(this).attr("data");
@@ -25,16 +25,18 @@ var queryURL = "https://api.giphy.com/v1/gifs/search" + superPower + "&api_key="
 $.ajax({
     url: queryURL,
     method: "GET"
-}).done(function(response){
+})
+
+.done(function(response){
+    $("#gifsView").empty();
+var results = response.data;
 
 });
 
-var results = response.data;
-
-for (var j=0, j < results.length; j++) {
+for (var i=0; i < results.length; i++) {
         var newDiv = $('<div>');
-        var newView = results[j].images.fixed_height.url;
-        var still = results[j].images.fixed_height.still.url;
+        var newView = results[i].images.fixed_height.url;
+        var still = results[i].images.fixed_height.still.url;
 }
 
 }
