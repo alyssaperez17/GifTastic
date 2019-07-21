@@ -2,6 +2,7 @@
 var topics = ["superwoman", "captain marvel", "wonderwoman", "black widow", "batgirl", "she hulk"];
 
 
+//loops through array 
 
 function renderButtons() {
     $("#hero-buttons").empty();
@@ -12,15 +13,19 @@ function renderButtons() {
 
 renderButtons();
 
+// supposed to show gifs, can't figure this one out
 
-var superPower = $(this).attr("data-name");
+$(document).on("click", "superheroes", function(){
+
+
+var superPower = $(this).attr("data");
 var apiKey = "ptRdKwscc7MtTD2Mp1U3iz3Wx6pIPRHT";
-var queryURL = "https://api.giphy.com/v1/gifs/search" + superPower + apiKey;
+var queryURL = "https://api.giphy.com/v1/gifs/search" + superPower + "&api_key=" + apiKey + "&limit=10"
 
 $.ajax({
     url: queryURL,
     method: "GET"
-}).done(function(response) {
+}).done(function(response){
 
 });
 
@@ -32,3 +37,6 @@ for (var j=0, j < results.length; j++) {
         var still = results[j].images.fixed_height.still.url;
 }
 
+}
+
+ 
